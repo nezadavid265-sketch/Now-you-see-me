@@ -1,0 +1,36 @@
+{
+  "name": "rivoshoppa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rivoshoppa multi-vendor marketplace (buyer, seller, admin and delivery portals)",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "db:start": "node scripts/dev-db.js",
+    "dev": "node scripts/dev.js",
+    "build": "npm run build -w client && npm run prisma:generate -w server",
+    "start": "npm run start -w server",
+    "worker": "npm run worker -w server",
+    "migrate": "npm run prisma:deploy -w server",
+    "seed": "npm run seed -w server",
+    "test": "npm test -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  },
+  "allowScripts": {
+    "prisma": true,
+    "@prisma/client": true,
+    "@prisma/engines": true,
+    "argon2": true,
+    "sharp": true,
+    "@embedded-postgres/windows-x64": true
+  }
+}

@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+/* Rivoshoppa design tokens: river teal brand, warm coral accent, slate neutrals. */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-brand-50: #ecfdfb;
+  --color-brand-100: #cdf7f3;
+  --color-brand-200: #9ceee7;
+  --color-brand-300: #5fdcd4;
+  --color-brand-400: #2cc1bb;
+  --color-brand-500: #13a4a1;
+  --color-brand-600: #0b8584;
+  --color-brand-700: #0b6e75;
+  --color-brand-800: #0e555c;
+  --color-brand-900: #10474d;
+  --color-brand-950: #042a30;
+
+  --color-accent-50: #fff4ef;
+  --color-accent-100: #ffe6dc;
+  --color-accent-200: #ffc9b3;
+  --color-accent-300: #ffa27f;
+  --color-accent-400: #fb7a4c;
+  --color-accent-500: #f2653a;
+  --color-accent-600: #de4a1f;
+  --color-accent-700: #b93a17;
+  --color-accent-800: #93311a;
+  --color-accent-900: #772c19;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 1px 3px rgb(15 23 42 / 0.06);
+  --shadow-pop: 0 10px 30px -10px rgb(15 23 42 / 0.25);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+  input[type='number']::-webkit-inner-spin-button {
+    @apply opacity-50;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.18s ease-out;
+}
