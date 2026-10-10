@@ -26,7 +26,7 @@ export const DEFAULT_SETTINGS = {
   marketplaceName: 'Rivoshoppa',
   currency: 'RWF',
   supportEmail: 'support@rivoshoppa.com',
-  supportPhone: '+250 788 000 000',
+  supportPhone: '+250 783 867 068',
   defaultCommissionBps: 1000,
   deliveryFeeBase: 1500,
   freeDeliveryThreshold: 50_000,

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import {
-  ChevronDown, ChevronRight, Heart, LayoutDashboard, LayoutGrid, LogOut, Mail, MapPin, Menu, Package, Phone, Settings,
+  ChevronDown, ChevronRight, Heart, LayoutDashboard, LayoutGrid, LogOut, Mail, MapPin, Menu, MessageCircle, Package, Phone, Settings,
   ShieldCheck, ShoppingCart, Store, Truck, User, X, RotateCcw, BadgeCheck,
 } from 'lucide-react';
 import { api } from '../lib/api.js';
@@ -303,8 +303,9 @@ export function ShopLayout() {
             <Logo inverted />
             <p className="mt-3 max-w-sm text-brand-200">Rwanda’s marketplace for trusted local sellers — electronics, home, fashion, groceries and more, delivered to your door.</p>
             <div className="mt-4 space-y-1.5 text-brand-200">
-              <p className="flex items-center gap-2"><Phone className="size-4" /> {config.supportPhone}</p>
-              <p className="flex items-center gap-2"><Mail className="size-4" /> {config.supportEmail}</p>
+              <a href="tel:+250783867068" className="flex items-center gap-2 hover:text-white"><Phone className="size-4" /> {config.supportPhone}</a>
+              <a href="https://wa.me/250783867068" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white"><MessageCircle className="size-4" /> WhatsApp</a>
+              <a href={`mailto:${config.supportEmail}`} className="flex items-center gap-2 hover:text-white"><Mail className="size-4" /> {config.supportEmail}</a>
             </div>
           </div>
           <div>
